@@ -50,57 +50,7 @@ document.querySelectorAll('.duration-select').forEach(select => {
     });
 });
 
-// Product IDs mapped to Stripe Payment Links (Replace 'LINK_URL' with your actual Stripe Payment Links)
-const stripeLinks = {
-    'fn-public': {
-        '5': 'https://buy.stripe.com/test_...',
-        '15': 'https://buy.stripe.com/test_...',
-        '45': 'https://buy.stripe.com/test_...',
-        '100': 'https://buy.stripe.com/test_...'
-    },
-    'fn-private': {
-        '15': 'https://buy.stripe.com/test_...',
-        '30': 'https://buy.stripe.com/test_...',
-        '70': 'https://buy.stripe.com/test_...',
-        '120': 'https://buy.stripe.com/test_...'
-    },
-    'perm-spoofer': {
-        '12': 'https://buy.stripe.com/test_...',
-        '25': 'https://buy.stripe.com/test_...',
-        '50': 'https://buy.stripe.com/test_...',
-        '70': 'https://buy.stripe.com/test_...'
-    },
-    'temp-spoofer': {
-        '5': 'https://buy.stripe.com/test_...',
-        '15': 'https://buy.stripe.com/test_...',
-        '35': 'https://buy.stripe.com/test_...'
-    }
-};
-
 function openCheckout(productName) {
-    // Find the currently selected duration for this product
-    const productSelects = document.querySelectorAll('.duration-select');
-    let selectedValue = null;
-    let productId = null;
-
-    productSelects.forEach(select => {
-        const rawProductName = productName.toLowerCase().replace(' ', '-');
-        if (select.getAttribute('data-product') === rawProductName) {
-            selectedValue = select.value;
-            productId = select.getAttribute('data-product');
-        }
-    });
-
-    if (productId && selectedValue && stripeLinks[productId][selectedValue]) {
-        const paymentLink = stripeLinks[productId][selectedValue];
-
-        if (paymentLink.includes('stripe.com')) {
-            // Redirect the user to the Stripe Payment Link
-            window.location.href = paymentLink;
-        } else {
-            alert("Payment link not set up yet. Please check back later or join our Discord.");
-        }
-    } else {
-        alert("Product selection error. Please try again.");
-    }
+    // Redirect all purchases to the Discord server
+    window.location.href = "https://discord.gg/Kn6kKHBurn";
 }
