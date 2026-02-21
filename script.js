@@ -1,151 +1,106 @@
-// Pricing data
-const products = {
-    'fortnite-public': {
-        '1-day': 5,
-        '1-week': 15,
-        '1-month': 45,
-        'lifetime': 100
+// Scroll Reveal System
+document.addEventListener("DOMContentLoaded", () => {
+    const reveals = document.querySelectorAll(".reveal");
+
+    const revealOnScroll = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        root: null,
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+    });
+
+    reveals.forEach(reveal => revealOnScroll.observe(reveal));
+});
+
+// Subtle Parallax for Grid Background
+window.addEventListener('scroll', () => {
+    const grid = document.querySelector('.bg-grid');
+    if (grid) {
+        const scrolled = window.scrollY;
+        grid.style.transform = `translateY(${scrolled * 0.15}px)`;
+    }
+});
+
+// Product Pricing Logic 
+const pricing = {
+    'fn-public': { '5': '$5', '15': '$15', '45': '$45', '100': '$100' },
+    'fn-private': { '15': '$15', '30': '$30', '70': '$70', '120': '$120' },
+    'perm-spoofer': { '12': '$12', '25': '$25', '50': '$50', '70': '$70' },
+    'temp-spoofer': { '5': '$5', '15': '$15', '35': '$35' }
+};
+
+document.querySelectorAll('.duration-select').forEach(select => {
+    select.addEventListener('change', (e) => {
+        const targetId = e.target.getAttribute('data-target');
+        const productId = e.target.getAttribute('data-product');
+        const durationValue = e.target.value;
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement && pricing[productId][durationValue]) {
+            targetElement.textContent = pricing[productId][durationValue];
+            targetElement.style.transform = 'scale(1.1)';
+            setTimeout(() => targetElement.style.transform = 'scale(1)', 200);
+        }
+    });
+});
+
+// Product IDs mapped to Stripe Payment Links (Replace 'LINK_URL' with your actual Stripe Payment Links)
+const stripeLinks = {
+    'fn-public': {
+        '5': 'https://buy.stripe.com/test_...',
+        '15': 'https://buy.stripe.com/test_...',
+        '45': 'https://buy.stripe.com/test_...',
+        '100': 'https://buy.stripe.com/test_...'
     },
-    'fortnite-private': {
-        '1-day': 15,
-        '1-week': 30,
-        '1-month': 70,
-        'lifetime': 120
+    'fn-private': {
+        '15': 'https://buy.stripe.com/test_...',
+        '30': 'https://buy.stripe.com/test_...',
+        '70': 'https://buy.stripe.com/test_...',
+        '120': 'https://buy.stripe.com/test_...'
     },
-    'spoofer-perm': {
-        '1-day': 12,
-        '1-week': 25,
-        '1-month': 50,
-        'lifetime': 70
+    'perm-spoofer': {
+        '12': 'https://buy.stripe.com/test_...',
+        '25': 'https://buy.stripe.com/test_...',
+        '50': 'https://buy.stripe.com/test_...',
+        '70': 'https://buy.stripe.com/test_...'
     },
-    'spoofer-temp': {
-        '1-day': 5,
-        '1-week': 15,
-        '1-month': 35
+    'temp-spoofer': {
+        '5': 'https://buy.stripe.com/test_...',
+        '15': 'https://buy.stripe.com/test_...',
+        '35': 'https://buy.stripe.com/test_...'
     }
 };
 
-// Update price on duration change
-document.querySelectorAll('.duration-select').forEach(select => {
-    select.addEventListener('change', (e) => {
-        const productId = e.target.dataset.product;
-        const duration = e.target.value;
-        const priceElement = document.getElementById(`price-${productId}`);
-        const price = products[productId][duration];
-        if (price) {
-            priceElement.textContent = `$${price}`;
-        } else {
-            priceElement.textContent = 'N/A';
+function openCheckout(productName) {
+    // Find the currently selected duration for this product
+    const productSelects = document.querySelectorAll('.duration-select');
+    let selectedValue = null;
+    let productId = null;
+
+    productSelects.forEach(select => {
+        const rawProductName = productName.toLowerCase().replace(' ', '-');
+        if (select.getAttribute('data-product') === rawProductName) {
+            selectedValue = select.value;
+            productId = select.getAttribute('data-product');
         }
     });
-});
 
-// Modal Logic
-const modal = document.getElementById('checkout-modal');
-const checkoutTitle = document.getElementById('checkout-title');
-const checkoutTotal = document.getElementById('checkout-total');
-const processingView = document.getElementById('processing-view');
-const successView = document.getElementById('success-view');
-const licenseKeyEl = document.getElementById('license-key');
-const initialView = document.getElementById('initial-view');
+    if (productId && selectedValue && stripeLinks[productId][selectedValue]) {
+        const paymentLink = stripeLinks[productId][selectedValue];
 
-document.querySelectorAll('.btn-buy').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        // e.currentTarget instead of e.target incase inner icon clicked
-        const ct = e.currentTarget;
-        const productId = ct.dataset.product;
-        const durationSelect = document.querySelector(`.duration-select[data-product="${productId}"]`);
-
-        let duration = '';
-        let price = '';
-        let title = '';
-
-        if (durationSelect) {
-            duration = durationSelect.value;
-            price = products[productId][duration];
-            title = ct.dataset.title + ' - ' + durationSelect.options[durationSelect.selectedIndex].text;
+        if (paymentLink.includes('stripe.com')) {
+            // Redirect the user to the Stripe Payment Link
+            window.location.href = paymentLink;
         } else {
-            duration = 'lifetime';
-            price = products[productId][duration];
-            title = ct.dataset.title;
+            alert("Payment link not set up yet. Please check back later or join our Discord.");
         }
-
-        checkoutTitle.textContent = title;
-        checkoutTotal.textContent = `Total: $${price}`;
-
-        // Reset Views
-        initialView.classList.remove('hidden');
-        processingView.classList.add('hidden');
-        successView.classList.add('hidden');
-
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
-    });
-});
-
-document.getElementById('close-modal').addEventListener('click', () => {
-    modal.classList.add('hidden');
-    modal.classList.remove('flex');
-});
-
-document.getElementById('confirm-purchase').addEventListener('click', () => {
-    initialView.classList.add('hidden');
-    processingView.classList.remove('hidden');
-    processingView.classList.add('flex');
-
-    setTimeout(() => {
-        processingView.classList.add('hidden');
-        processingView.classList.remove('flex');
-        successView.classList.remove('hidden');
-
-        // Generate random fake key
-        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-        const segments = Array.from({ length: 4 }, () =>
-            Array.from({ length: 4 }, () => chars.charAt(Math.floor(Math.random() * chars.length))).join('')
-        );
-        licenseKeyEl.textContent = `ENIG-${segments.join('-')}`;
-    }, 2500);
-});
-
-// FAQ Accordion
-document.querySelectorAll('.faq-toggle').forEach(btn => {
-    btn.addEventListener('click', () => {
-        const content = btn.nextElementSibling;
-        const icon = btn.querySelector('.chevron');
-
-        if (content.style.maxHeight) {
-            content.style.maxHeight = null;
-            icon.style.transform = "rotate(0deg)";
-        } else {
-            content.style.maxHeight = content.scrollHeight + "px";
-            icon.style.transform = "rotate(180deg)";
-        }
-    });
-});
-
-// Countdown timer
-function updateCountdown() {
-    const el = document.getElementById('countdown');
-    if (!el) return;
-
-    let time = el.textContent.split(':');
-    let m = parseInt(time[0]);
-    let s = parseInt(time[1]);
-
-    if (s > 0) {
-        s--;
     } else {
-        if (m > 0) {
-            m--;
-            s = 59;
-        } else {
-            m = 5;
-            s = 0;
-            const slots = document.querySelectorAll('.slots-left');
-            slots.forEach(s => s.textContent = Math.floor(Math.random() * 5) + 2);
-        }
+        alert("Product selection error. Please try again.");
     }
-
-    el.textContent = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
 }
-setInterval(updateCountdown, 1000);

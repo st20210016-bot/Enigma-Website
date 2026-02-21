@@ -1,494 +1,182 @@
 <!DOCTYPE html>
 <html lang="en" class="dark scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enigma | Elite Fortnite Cheats & HWID Spoofing</title>
+    <title>Enigma | Elite Fortnite Advantage</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            colors: {
-              'enigma-bg': '#0a0a0f',
-              'enigma-panel': '#14141a',
-              'enigma-purple': '#8a00c4',
-              'enigma-purple-hover': '#a020f0',
-              'enigma-purple-glow': '#c026d3',
-              'enigma-cyan': '#00f5ff',
-              'enigma-warning': '#ffaa00',
-              'enigma-danger': '#ff3040',
-              'enigma-text': '#d0d0d0',
-              'enigma-text-light': '#a0a0b0',
-            },
-            fontFamily: {
-              'futuristic': ['Orbitron', 'sans-serif'],
-              'body': ['Inter', 'sans-serif'],
-              'mono': ['Consolas', 'monospace'],
-            },
-            boxShadow: {
-              'neon-purple': '0 0 15px rgba(138,0,196,0.7), 0 0 35px rgba(138,0,196,0.4)',
-              'neon-cyan': '0 0 20px rgba(0,245,255,0.5)',
-              'glass': '0 4px 30px rgba(0,0,0,0.3)',
-            },
-            backdropBlur: { 'xs': '2px', 'sm': '4px' },
-          }
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'enigma-bg': '#050505',
+                        'enigma-purple': '#a020f0',
+                    }
+                }
+            }
         }
-      }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;500;600&family=Consolas&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <!-- Phosphor Icons for modern SVG icons -->
+    <!-- Phosphor Icons for high-end clean icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://js.stripe.com/v3/"></script>
 </head>
-<body class="bg-enigma-bg text-enigma-text font-body antialiased selection:bg-enigma-purple selection:text-white">
-    <!-- Scanlines Effect -->
-    <div class="scanlines"></div>
 
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 glass-panel border-b border-enigma-purple/20 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-3 cursor-pointer">
-                <i class="ph-fill ph-target text-4xl text-enigma-purple neon-text-purple"></i>
-                <div>
-                    <h1 class="font-futuristic text-2xl font-bold tracking-wider text-white neon-text-purple">ENIGMA</h1>
-                </div>
+<body class="antialiased selection:bg-enigma-purple selection:text-white pb-20">
+
+    <!-- Ambient Background Lighting -->
+    <div class="bg-grid"></div>
+    <div class="ambient-glow"></div>
+
+    <!-- Navigation (Apple Style) -->
+    <nav class="fixed top-0 w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2 text-white hover:opacity-80 transition-opacity">
+                <i class="ph-fill ph-target text-xl"></i>
+                <span class="font-bold tracking-tight text-sm">ENIGMA</span>
+            </a>
+            <div class="hidden md:flex space-x-8 text-xs font-medium text-[#86868b]">
+                <a href="products.html" class="hover:text-white transition-colors">Products</a>
+                <a href="#features" class="hover:text-white transition-colors">Features</a>
+                <a href="#reviews" class="hover:text-white transition-colors">Reviews</a>
             </div>
-            <div class="hidden md:flex space-x-8">
-                <a href="#products" class="text-enigma-text-light hover:text-white hover:text-shadow-neon transition-colors">Products</a>
-                <a href="#spoofer" class="text-enigma-text-light hover:text-white transition-colors">Spoofer UI</a>
-                <a href="#reviews" class="text-enigma-text-light hover:text-white transition-colors">Reviews</a>
-            </div>
-            <div>
-                <a href="#products" class="btn-primary px-6 py-2 rounded font-futuristic font-bold text-white shadow-neon-purple tracking-wide">GET ACCESS</a>
+            <div class="flex items-center gap-4">
+                <a href="https://discord.gg/Kn6kKHBurn" target="_blank"
+                    class="text-[#86868b] hover:text-white transition-colors flex items-center gap-1 text-xs font-medium"
+                    title="Join Discord">
+                    <i class="ph-fill ph-discord-logo text-lg"></i>
+                    <span class="hidden sm:inline">Community</span>
+                </a>
+                <a href="products.html" class="apple-btn apple-btn-primary !text-xs !py-1.5 !px-4">Get Access</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden flex flex-col items-center text-center px-4">
-        <!-- Abstract gradient blob behind hero -->
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-enigma-purple opacity-20 blur-[120px] rounded-full pointer-events-none"></div>
-        
-        <h2 class="font-futuristic text-4xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight text-white relative z-10 leading-tight">
-            The Ultimate <br/>
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-enigma-purple to-enigma-purple-glow">Fortnite Advantage</span>
-        </h2>
-        <p class="text-enigma-text-light text-lg md:text-xl max-w-2xl mb-10 relative z-10 font-medium">
-            Elite Fortnite Cheats & HWID Spoofing – Undetected. Permanent. Powerful.
+    <section
+        class="relative pt-40 pb-20 px-6 max-w-5xl mx-auto text-center reveal text-white flex flex-col items-center">
+        <div
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs font-medium mb-8 text-[#86868b]">
+            <span class="w-2 h-2 rounded-full bg-enigma-purple animate-pulse"></span>
+            HWID Undetected
+        </div>
+
+        <h1 class="hero-title mb-6">
+            Profound power.<br>
+            <span class="text-gradient-purple">Absolute stealth.</span>
+        </h1>
+
+        <p class="hero-subtitle mb-12 max-w-2xl mx-auto">
+            The most advanced Fortnite enhancement suite ever engineered. Undetected at the kernel level. Unmatched in
+            precision.
         </p>
-        <a href="#products" class="relative z-10 btn-primary px-10 py-4 rounded-lg font-futuristic text-lg font-bold text-white shadow-neon-purple uppercase tracking-widest hover:scale-105 transition-transform">
-            Browse Products
-        </a>
-        <div class="mt-8 flex gap-4 text-sm font-mono text-enigma-text-light relative z-10">
-            <span class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-enigma-cyan"></i> 0 Detections</span>
-            <span class="flex items-center gap-2"><i class="ph-fill ph-lightning text-enigma-warning"></i> Instant Delivery</span>
+
+        <div class="flex flex-col sm:flex-row items-center gap-6 justify-center">
+            <a href="products.html" class="apple-btn apple-btn-primary">View Pricing</a>
+            <a href="#features" class="apple-btn bg-white/10 text-white hover:bg-white/20">Learn more <i
+                    class="ph-bold ph-caret-right text-xs"></i></a>
         </div>
     </section>
 
-    <!-- Products Section -->
-    <section id="products" class="py-20 bg-[#0c0c14] relative border-y border-enigma-purple/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h3 class="font-futuristic text-3xl font-bold text-white mb-2">Our Solutions</h3>
-                <p class="text-enigma-text-light">Select your tier. Dominate seamlessly.</p>
-                <div class="mt-4 inline-block glass-panel px-4 py-1 rounded-full text-sm font-mono text-enigma-warning flex items-center justify-center gap-2 w-fit mx-auto">
-                    <i class="ph-fill ph-clock"></i> Slots refresh in <span id="countdown" class="font-bold">05:00</span>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Product 1 -->
-                <div class="glass-panel hover-glow rounded-xl p-6 flex flex-col relative overflow-hidden group transition-all duration-300 z-10">
-                    <div class="absolute top-0 right-0 bg-enigma-purple/20 text-enigma-purple text-xs font-bold px-3 py-1 rounded-bl-lg">Essentials</div>
-                    
-                    <div class="h-32 mb-4 bg-gradient-to-br from-black to-enigma-panel rounded-lg border border-enigma-purple/20 flex items-center justify-center overflow-hidden">
-                        <i class="ph ph-crosshair text-6xl text-enigma-purple/50 group-hover:text-enigma-purple group-hover:scale-110 transition-all"></i>
-                    </div>
-
-                    <h4 class="font-futuristic text-xl font-bold text-white mb-1">FN Public</h4>
-                    <p class="text-enigma-text-light text-sm mb-4 h-10">Basic Essentials. Stay aware and hit your shots.</p>
-                    
-                    <div class="flex items-center gap-2 mb-4 text-xs font-mono">
-                        <span class="bg-enigma-purple/20 text-enigma-purple px-2 py-0.5 rounded shadow-neon-purple flex gap-1 items-center"><i class="ph-fill ph-shield-check"></i> Undetected</span>
-                        <span class="text-enigma-warning">★ 4.9 <span class="text-enigma-text-light">(1.2k)</span></span>
-                    </div>
-
-                    <ul class="text-sm space-y-2 mb-6 flex-grow text-enigma-text-light">
-                        <li class="flex items-start gap-2"><i class="ph-bold ph-check text-enigma-cyan mt-0.5"></i> ESP (Player + Loot)</li>
-                        <li class="flex items-start gap-2"><i class="ph-bold ph-check text-enigma-cyan mt-0.5"></i> Smooth Aimbot</li>
-                        <li class="text-enigma-warning text-xs mt-2 italic"><span class="slots-left">12</span> slots left</li>
-                    </ul>
-
-                    <div class="mt-auto">
-                        <select class="duration-select w-full bg-[#0a0a0f] border border-enigma-purple/30 rounded p-2 text-sm text-white focus:outline-none focus:border-enigma-purple mb-3 transition-colors" data-product="fortnite-public">
-                            <option value="1-day">1 Day</option>
-                            <option value="1-week">1 Week</option>
-                            <option value="1-month" selected>1 Month</option>
-                            <option value="lifetime">Lifetime</option>
-                        </select>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-2xl font-bold font-futuristic text-white" id="price-fortnite-public">$45</span>
-                        </div>
-                        <button class="btn-buy btn-primary w-full py-2.5 rounded font-bold uppercase tracking-wider text-sm flex items-center justify-center gap-2" data-product="fortnite-public" data-title="FN Public">
-                            <i class="ph-bold ph-shopping-cart"></i> Buy Now
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Product 2 -->
-                <div class="glass-panel hover-glow rounded-xl p-6 flex flex-col relative overflow-hidden group transition-all duration-300 z-10 ring-1 ring-enigma-purple/50 shadow-neon-purple">
-                    <div class="absolute top-0 right-0 bg-enigma-purple text-white text-xs font-bold px-3 py-1 rounded-bl-lg shadow-neon-purple">Best Seller</div>
-                    
-                    <div class="h-32 mb-4 bg-gradient-to-br from-[#1a0526] to-black rounded-lg border border-enigma-purple border-opacity-50 flex items-center justify-center overflow-hidden">
-                        <i class="ph ph-crown text-6xl text-enigma-purple group-hover:text-white group-hover:scale-110 transition-all neon-text-purple"></i>
-                    </div>
-
-                    <h4 class="font-futuristic text-xl font-bold text-white mb-1">FN Private</h4>
-                    <p class="text-enigma-text-light text-sm mb-4 h-10">Advanced Suite. Complete domination with priority loader.</p>
-                    
-                    <div class="flex items-center gap-2 mb-4 text-xs font-mono">
-                        <span class="bg-enigma-purple text-white px-2 py-0.5 rounded shadow-neon-purple flex gap-1 items-center"><i class="ph-fill ph-shield-check"></i> Undetected</span>
-                        <span class="text-enigma-warning">★ 5.0 <span class="text-enigma-text-light">(8k+)</span></span>
-                    </div>
-
-                    <ul class="text-sm space-y-2 mb-6 flex-grow text-enigma-text-light leading-tight">
-                        <li class="flex items-start gap-2"><i class="ph-bold ph-check text-enigma-cyan mt-0.5"></i> Full ESP (Loot, Distance, Custom)</li>
-                        <li class="flex items-start gap-2"><i class="ph-bold ph-check text-enigma-cyan mt-0.5"></i> Advanced Aim (Silent, Prediction)</li>
-                        <li class="flex items-start gap-2"><i class="ph-bold ph-check text-enigma-cyan mt-0.5"></i> No Recoil / Spread Control</li>
-                        <li class="flex items-start gap-2"><i class="ph-bold ph-check text-enigma-cyan mt-0.5"></i> Movement Optimization</li>
-                        <li class="flex items-start gap-2"><i class="ph-bold ph-check text-enigma-cyan mt-0.5"></i> Priority Loader + Configs</li>
-                        <li class="text-enigma-warning text-xs mt-2 italic"><span class="slots-left">3</span> slots left</li>
-                    </ul>
-
-                    <div class="mt-auto">
-                        <select class="duration-select w-full bg-[#0a0a0f] border border-enigma-purple/30 rounded p-2 text-sm text-white focus:outline-none focus:border-enigma-purple mb-3 transition-colors" data-product="fortnite-private">
-                            <option value="1-day">1 Day</option>
-                            <option value="1-week">1 Week</option>
-                            <option value="1-month" selected>1 Month</option>
-                            <option value="lifetime">Lifetime</option>
-                        </select>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-2xl font-bold font-futuristic text-white" id="price-fortnite-private">$70</span>
-                        </div>
-                        <button class="btn-buy btn-primary w-full py-2.5 rounded font-bold uppercase tracking-wider text-sm flex items-center justify-center gap-2 relative overflow-hidden group" data-product="fortnite-private" data-title="FN Private">
-                            <span class="absolute inset-0 w-full h-full bg-enigma-purple-glow opacity-0 group-hover:opacity-50 transition-opacity"></span>
-                            <i class="ph-bold ph-shopping-cart relative z-10"></i> <span class="relative z-10">Buy Now</span>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Product 3 -->
-                <div class="glass-panel hover-glow rounded-xl p-6 flex flex-col relative overflow-hidden group transition-all duration-300 z-10">
-                    <div class="absolute top-0 right-0 bg-enigma-danger/20 text-enigma-danger text-xs font-bold px-3 py-1 rounded-bl-lg">Deep Rewrite</div>
-                    
-                    <div class="h-32 mb-4 bg-gradient-to-br from-black to-enigma-panel rounded-lg border border-enigma-danger/30 flex items-center justify-center overflow-hidden">
-                        <i class="ph ph-hard-drives text-6xl text-enigma-danger/50 group-hover:text-enigma-danger group-hover:scale-110 transition-all"></i>
-                    </div>
-
-                    <h4 class="font-futuristic text-xl font-bold text-white mb-1">Permanent Spoofer</h4>
-                    <p class="text-enigma-text-light text-sm mb-4 h-10">Unban yourself forever. Deep registry & serial rewrite.</p>
-                    
-                    <div class="flex items-center gap-2 mb-4 text-xs font-mono">
-                        <span class="bg-enigma-danger/20 text-enigma-danger px-2 py-0.5 rounded flex gap-1 items-center border border-enigma-danger/50 shadow-[0_0_10px_rgba(255,48,64,0.3)]"><i class="ph-fill ph-warning-octagon"></i> Modifies Registry</span>
-                    </div>
-
-                    <ul class="text-sm space-y-2 mb-6 flex-grow text-enigma-text-light">
-                        <li class="flex items-start gap-2"><i class="ph-bold ph-check text-enigma-cyan mt-0.5"></i> Deep Permanent Rewrite</li>
-                        <li class="flex items-start gap-2"><i class="ph-bold ph-check text-enigma-cyan mt-0.5"></i> Disk, MAC, CPU, GPU, SMBIOS</li>
-                        <li class="flex items-start gap-2"><i class="ph-bold ph-check text-enigma-cyan mt-0.5"></i> TPM & Secure Boot Bypass</li>
-                        <li class="flex items-start gap-2"><i class="ph-bold ph-check text-enigma-cyan mt-0.5"></i> Cleanup tools included</li>
-                    </ul>
-
-                    <div class="mt-auto">
-                        <select class="duration-select w-full bg-[#0a0a0f] border border-enigma-purple/30 rounded p-2 text-sm text-white focus:outline-none focus:border-enigma-purple mb-3 transition-colors" data-product="spoofer-perm">
-                            <option value="1-day">1 Day</option>
-                            <option value="1-week">1 Week</option>
-                            <option value="1-month" selected>1 Month</option>
-                            <option value="lifetime">Lifetime</option>
-                        </select>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-2xl font-bold font-futuristic text-white" id="price-spoofer-perm">$50</span>
-                        </div>
-                        <button class="btn-buy bg-[#a020f0] hover:bg-[#c026d3] w-full py-2.5 rounded font-bold uppercase tracking-wider text-sm flex items-center justify-center gap-2 text-white shadow-[0_0_15px_rgba(160,32,240,0.8)] transition-all transform hover:scale-105" data-product="spoofer-perm" data-title="Perm Spoofer">
-                            <i class="ph-bold ph-warning"></i> Permanent Spoof
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Product 4 -->
-                <div class="glass-panel hover-glow rounded-xl p-6 flex flex-col relative overflow-hidden group transition-all duration-300 z-10">
-                    <div class="absolute top-0 right-0 bg-enigma-purple/20 text-enigma-purple text-xs font-bold px-3 py-1 rounded-bl-lg">One-Click</div>
-                    
-                    <div class="h-32 mb-4 bg-gradient-to-br from-black to-enigma-panel rounded-lg border border-enigma-purple/20 flex items-center justify-center overflow-hidden">
-                        <i class="ph ph-laptop text-6xl text-enigma-purple/50 group-hover:text-enigma-purple group-hover:scale-110 transition-all"></i>
-                    </div>
-
-                    <h4 class="font-futuristic text-xl font-bold text-white mb-1">Temp Spoofer</h4>
-                    <p class="text-enigma-text-light text-sm mb-4 h-10">Temporary runtime spoofing. Leaves no trace upon restart.</p>
-                    
-                    <div class="flex items-center gap-2 mb-4 text-xs font-mono">
-                        <span class="bg-enigma-cyan/20 text-enigma-cyan px-2 py-0.5 rounded border border-enigma-cyan/50 shadow-[0_0_10px_rgba(0,245,255,0.3)]"><i class="ph-fill ph-arrows-clockwise"></i> Reversible</span>
-                    </div>
-
-                    <ul class="text-sm space-y-2 mb-6 flex-grow text-enigma-text-light">
-                        <li class="flex items-start gap-2"><i class="ph-bold ph-check text-enigma-cyan mt-0.5"></i> Runtime HWID Change</li>
-                        <li class="flex items-start gap-2"><i class="ph-bold ph-check text-enigma-cyan mt-0.5"></i> Compatible with most loaders</li>
-                        <li class="flex items-start gap-2"><i class="ph-bold ph-check text-enigma-cyan mt-0.5"></i> Quick reset option</li>
-                    </ul>
-
-                    <div class="mt-auto">
-                        <select class="duration-select w-full bg-[#0a0a0f] border border-enigma-purple/30 rounded p-2 text-sm text-white focus:outline-none focus:border-enigma-purple mb-3 transition-colors" data-product="spoofer-temp">
-                            <option value="1-day">1 Day</option>
-                            <option value="1-week">1 Week</option>
-                            <option value="1-month" selected>1 Month</option>
-                        </select>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-2xl font-bold font-futuristic text-white" id="price-spoofer-temp">$35</span>
-                        </div>
-                        <button class="btn-buy btn-primary w-full py-2.5 rounded font-bold uppercase tracking-wider text-sm flex items-center justify-center gap-2" data-product="spoofer-temp" data-title="Temp Spoofer">
-                            <i class="ph-bold ph-shopping-cart"></i> Buy Now
-                        </button>
-                    </div>
-                </div>
-
+    <!-- Feature Showcase Image Placeholder -->
+    <section class="max-w-6xl mx-auto px-6 mb-32 reveal">
+        <div
+            class="w-full aspect-video rounded-3xl border border-white/5 bg-gradient-to-br from-white/5 to-transparent overflow-hidden relative shadow-2xl flex items-center justify-center">
+            <i class="ph-thin ph-crosshair text-[10rem] text-white/5 relative z-10"></i>
+            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(160,32,240,0.15),transparent_50%)]">
             </div>
         </div>
     </section>
 
-    <!-- Spoofer UI Preview -->
-    <section id="spoofer" class="py-20 relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col lg:flex-row items-center gap-12">
-                <div class="lg:w-1/2">
-                    <h3 class="font-futuristic text-3xl font-bold text-white mb-4">Engineered to Perfection</h3>
-                    <p class="text-enigma-text-light mb-6">Our desktop application mirrors the dark, cyberpunk aesthetics of our brand. Engineered in Python/C++ with a sleek custom ImGui-inspired dark mode interface. Monitor your module status, read kernel logs in real-time, and mask your identity with a single click.</p>
-                    <ul class="space-y-4 font-mono text-sm max-w-md">
-                        <li class="flex justify-between items-center border-b border-[#2a2a3f] pb-2">
-                            <span class="text-white">Anti-Cheat Status</span>
-                            <span class="text-enigma-cyan font-bold">BYPASSED</span>
-                        </li>
-                        <li class="flex justify-between items-center border-b border-[#2a2a3f] pb-2">
-                            <span class="text-white">Original HWID</span>
-                            <span class="text-enigma-danger">EXPOSED</span>
-                        </li>
-                        <li class="flex justify-between items-center border-b border-[#2a2a3f] pb-2">
-                            <span class="text-white">Enigma Driver</span>
-                            <span class="text-enigma-cyan">LOADED</span>
-                        </li>
-                        <li class="flex justify-between items-center border-b border-[#2a2a3f] pb-2">
-                            <span class="text-white">TPM / Secure Boot</span>
-                            <span class="text-enigma-warning">PRESENT / DISABLED</span>
-                        </li>
-                    </ul>
+    <!-- Details Section -->
+    <section id="features" class="py-20 mb-20 max-w-5xl mx-auto px-6 border-t border-white/10">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div class="reveal">
+                <h2 class="text-4xl font-bold mb-6 text-white tracking-tight">Kernel-Level Integration.</h2>
+                <p class="text-[#86868b] text-lg leading-relaxed">
+                    Operate invisibly. Our custom ring-0 hypervisor architecture ensuring that the anti-cheat never sees
+                    you. We bypass TPM, Secure Boot, and traditional signature scans seamlessly.
+                </p>
+            </div>
+            <div class="grid grid-cols-2 gap-6 reveal">
+                <div class="glass-card p-8">
+                    <i class="ph-light ph-shield-check text-4xl text-white mb-4 block"></i>
+                    <h3 class="text-white font-bold mb-2">0 Detections</h3>
+                    <p class="text-sm text-[#86868b]">Since launch in 2025.</p>
                 </div>
-                
-                <div class="lg:w-1/2 relative w-full perspective-1000">
-                    <!-- Fake UI Window -->
-                    <div class="bg-[#111117] border border-enigma-purple/50 rounded-lg shadow-neon-purple overflow-hidden flex flex-col transform lg:rotate-y-[-10deg] transition-transform duration-500 hover:rotate-y-0">
-                        <!-- Top Bar -->
-                        <div class="h-8 bg-[#0a0a0f] flex items-center px-4 justify-between border-b border-enigma-purple/20">
-                            <div class="font-futuristic text-xs text-white tracking-widest text-shadow-neon">ENIGMA SPOOFER <span class="text-enigma-purple">v4.2</span></div>
-                            <div class="flex gap-2">
-                                <div class="w-3 h-3 rounded-full bg-enigma-danger/80"></div>
-                                <div class="w-3 h-3 rounded-full bg-enigma-warning/80"></div>
-                                <div class="w-3 h-3 rounded-full bg-[#3a3a4f]"></div>
-                            </div>
-                        </div>
-                        <!-- Main Content UI -->
-                        <div class="flex p-4 gap-4 h-80">
-                            <!-- Sidebar -->
-                            <div class="w-1/3 bg-[#1a1a24] border border-[#2a2a3f] rounded flex flex-col p-2 space-y-2">
-                                <button class="bg-[#2a2a3f] text-left px-3 py-2 rounded text-sm font-bold text-white border-l-2 border-enigma-purple">GENERAL</button>
-                                <button class="hover:bg-[#2a2a3f] text-left px-3 py-2 rounded text-sm text-enigma-text-light transition-colors">ACTIONS</button>
-                                <button class="hover:bg-[#2a2a3f] text-left px-3 py-2 rounded text-sm text-enigma-text-light transition-colors">STATUS</button>
-                            </div>
-                            <!-- Right Pane -->
-                            <div class="w-2/3 flex flex-col gap-4">
-                                <div class="grid grid-cols-2 gap-2">
-                                    <div class="bg-[#1a1a24] border border-[#2a2a3f] p-3 rounded flex items-center justify-between">
-                                        <span class="text-xs font-bold text-white">Disk Spoof</span>
-                                        <div class="w-8 h-4 bg-enigma-purple rounded-full relative shadow-[0_0_8px_rgba(138,0,196,0.6)]">
-                                            <div class="absolute right-1 top-0.5 w-3 h-3 bg-white rounded-full"></div>
-                                        </div>
-                                    </div>
-                                    <div class="bg-[#1a1a24] border border-[#2a2a3f] p-3 rounded flex items-center justify-between">
-                                        <span class="text-xs font-bold text-white">MAC Spoof</span>
-                                        <div class="w-8 h-4 bg-enigma-purple rounded-full relative shadow-[0_0_8px_rgba(138,0,196,0.6)]">
-                                            <div class="absolute right-1 top-0.5 w-3 h-3 bg-white rounded-full"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mt-auto">
-                                    <span class="text-xs text-enigma-text-light font-bold mb-1 block">KERNEL LOG</span>
-                                    <div class="bg-black/80 border border-[#2a2a3f] h-32 rounded p-2 font-mono text-[10px] text-enigma-cyan overflow-hidden flex flex-col justify-end">
-                                        <div>[17:49:03] Injecting IOCTL hooks...</div>
-                                        <div>[17:49:04] Disk serial mapped: HD-A7X9-B2</div>
-                                        <div>[17:49:05] ARP tables flushed.</div>
-                                        <div>[17:49:06] Engine initialized</div>
-                                        <div class="text-white mt-1 border-t border-[#2a2a3f]/50 pt-1">Awaiting command _ <span class="animate-pulse">|</span></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="glass-card p-8 bg-gradient-to-b from-white/5 to-transparent">
+                    <i class="ph-light ph-cpu text-4xl text-white mb-4 block"></i>
+                    <h3 class="text-white font-bold mb-2">HWID Spoofing</h3>
+                    <p class="text-sm text-[#86868b]">Built-in protection layer.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Trust / Reviews -->
-    <section id="reviews" class="py-16 bg-[#0c0c14] border-t border-enigma-purple/10">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <h3 class="font-futuristic text-2xl font-bold text-white mb-2">Trusted by 2.3k+ Players</h3>
-            <p class="text-enigma-purple font-mono mb-10 text-sm shadow-neon-purple inline-block px-3 py-1 bg-enigma-purple/10 rounded">Undetected since 2025</p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="glass-panel p-5 rounded-lg text-left">
-                    <div class="flex text-enigma-warning text-sm mb-2">★★★★★</div>
-                    <p class="text-enigma-text-light text-sm italic mb-4">"Best private build on the market. Hit champ in two days, no shadow bans, no kicks. AIM is entirely smooth."</p>
-                    <p class="text-white font-bold text-xs">- zX_Viper_Xz</p>
+    <!-- Reviews -->
+    <section id="reviews" class="py-20 border-t border-white/10">
+        <div class="max-w-6xl mx-auto px-6 text-center reveal">
+            <h2 class="text-3xl font-bold text-white mb-4 tracking-tight">Trusted by Elites.</h2>
+            <div class="grid md:grid-cols-3 gap-6 mt-12 text-left">
+                <div class="glass-card p-8">
+                    <div class="flex gap-1 mb-4 text-[#d383ff]"><i class="ph-fill ph-star"></i><i
+                            class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                            class="ph-fill ph-star"></i></div>
+                    <p class="text-[#86868b] text-sm leading-relaxed mb-6">"Incredibly clean product. Using this
+                        continuously in high Elo lobbies without a single issue. Superior design."</p>
+                    <p class="text-white font-medium text-sm">Pro Player Anon</p>
                 </div>
-                <div class="glass-panel p-5 rounded-lg text-left border-enigma-purple/40">
-                    <div class="flex text-enigma-warning text-sm mb-2">★★★★★</div>
-                    <p class="text-enigma-text-light text-sm italic mb-4">"Tested the perm spoofer after a hardware ban on my main rig. It worked perfectly. Tracker shows me as a completely new PC."</p>
-                    <p class="text-white font-bold text-xs">- Ghost_Tear</p>
+                <div class="glass-card p-8">
+                    <div class="flex gap-1 mb-4 text-[#d383ff]"><i class="ph-fill ph-star"></i><i
+                            class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                            class="ph-fill ph-star"></i></div>
+                    <p class="text-[#86868b] text-sm leading-relaxed mb-6">"The spoofer works flawlessly on my setup
+                        where others failed regarding TPM 2.0 restrictions. Great support."</p>
+                    <p class="text-white font-medium text-sm">HWID Banned User</p>
                 </div>
-                <div class="glass-panel p-5 rounded-lg text-left">
-                    <div class="flex text-enigma-warning text-sm mb-2">★★★★★</div>
-                    <p class="text-enigma-text-light text-sm italic mb-4">"Support team is actually insane. Helped me setup the temporary spoofer in 5 mins flat. Lifetime customer here."</p>
-                    <p class="text-white font-bold text-xs">- AnonFN22</p>
-                </div>
-            </div>
-            
-            <div class="mt-12 flex items-center justify-center gap-6 text-enigma-text-light/50">
-                <i class="ph ph-currency-btc text-4xl hover:text-white transition"></i>
-                <i class="ph ph-paypal-logo text-4xl hover:text-white transition"></i>
-                <i class="ph ph-credit-card text-4xl hover:text-white transition"></i>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="py-20">
-        <div class="max-w-4xl mx-auto px-4">
-            <h3 class="font-futuristic text-3xl font-bold text-white mb-10 text-center">Frequently Asked</h3>
-            <div class="space-y-4">
-                <div class="glass-panel rounded-lg">
-                    <button class="faq-toggle w-full px-6 py-4 flex items-center justify-between text-left focus:outline-none">
-                        <span class="font-bold text-white">Is this really undetected?</span>
-                        <i class="ph-bold ph-caret-down text-enigma-purple chevron transition-transform" style="transform: rotate(0deg);"></i>
-                    </button>
-                    <div class="accordion-content bg-black/50 px-6 max-h-0 overflow-hidden text-sm text-enigma-text-light">
-                        <p class="py-4">Yes. Our private builds are slotted and tightly controlled to avoid mass signature detection. The core engine is built via custom Ring0 drivers operating outside of standard anti-cheat visibility.</p>
-                    </div>
-                </div>
-                <div class="glass-panel rounded-lg">
-                    <button class="faq-toggle w-full px-6 py-4 flex items-center justify-between text-left focus:outline-none">
-                        <span class="font-bold text-white">What's the difference between Perm and Temp spoofer?</span>
-                        <i class="ph-bold ph-caret-down text-enigma-purple chevron transition-transform"></i>
-                    </button>
-                    <div class="accordion-content bg-black/50 px-6 max-h-0 overflow-hidden text-sm text-enigma-text-light">
-                        <p class="py-4">Permanent heavily modifies Windows registry and specific serials permanently, surviving restarts. Temporary loads a kernel driver that intercepts and spoofs hardware ID queries until you reboot.</p>
-                    </div>
-                </div>
-                <div class="glass-panel rounded-lg">
-                    <button class="faq-toggle w-full px-6 py-4 flex items-center justify-between text-left focus:outline-none">
-                        <span class="font-bold text-white">Do you offer refunds?</span>
-                        <i class="ph-bold ph-caret-down text-enigma-purple chevron transition-transform"></i>
-                    </button>
-                    <div class="accordion-content bg-black/50 px-6 max-h-0 overflow-hidden text-sm text-enigma-text-light">
-                        <p class="py-4">100% money back guarantee if you are banned within 24 hours of using our explicitly marked 'Undetected' tools without combining them with other software.</p>
-                    </div>
+                <div class="glass-card p-8">
+                    <div class="flex gap-1 mb-4 text-[#d383ff]"><i class="ph-fill ph-star"></i><i
+                            class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                            class="ph-fill ph-star"></i></div>
+                    <p class="text-[#86868b] text-sm leading-relaxed mb-6">"Setup took 2 minutes. The ESP is smooth and
+                        doesn't clutter the screen. Exactly the modern aesthetic I wanted."</p>
+                    <p class="text-white font-medium text-sm">Viper11</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-black py-10 border-t border-enigma-purple/20 relative z-20">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
-            <div class="flex items-center gap-2">
-                <i class="ph-fill ph-target text-2xl text-enigma-purple"></i>
-                <span class="font-futuristic font-bold text-white">ENIGMA</span>
-            </div>
-            <div class="text-sm font-mono text-enigma-text-light text-center md:text-left">
-                100% Money Back if Detected • Contact:  support@enigma-cheats.null
-            </div>
-            <div class="text-xs text-[#555]">
-                &copy; 2026 Enigma Solutions. All rights reserved. Not affiliated with Epic Games.
+    <footer class="py-12 border-t border-white/10 text-center">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col items-center">
+            <i class="ph-fill ph-target text-3xl text-white mb-4"></i>
+            <p class="text-sm font-bold text-white mb-2 tracking-wide">ENIGMA</p>
+            <p class="text-xs text-[#86868b] mb-6 max-w-md mx-auto">
+                Elite performance tools. <br>Not affiliated with Epic Games.
+            </p>
+            <div class="flex gap-6 items-center">
+                <a href="https://discord.gg/Kn6kKHBurn" target="_blank"
+                    class="text-[#86868b] hover:text-white transition flex items-center gap-2 text-sm"><i
+                        class="ph-fill ph-discord-logo text-xl"></i> Discord Server</a>
             </div>
         </div>
     </footer>
 
-    <!-- Fake Checkout Modal -->
-    <div id="checkout-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-[100] hidden items-center justify-center p-4">
-        <div class="glass-panel border-enigma-purple/50 max-w-md w-full rounded-xl p-8 relative shadow-[0_0_50px_rgba(138,0,196,0.3)]">
-            <button id="close-modal" class="absolute top-4 right-4 text-enigma-text hover:text-white"><i class="ph-bold ph-x text-xl"></i></button>
-            
-            <!-- Initial view -->
-            <div id="initial-view">
-                <h3 class="font-futuristic text-2xl font-bold text-white mb-2">Secure Checkout</h3>
-                <p class="text-enigma-purple text-sm mb-6" id="checkout-title">Product Name - Duration</p>
-                
-                <div class="space-y-4 mb-6">
-                    <input type="email" placeholder="Email Address for Delivery" class="w-full bg-[#0a0a0f] border border-[#2a2a3f] rounded p-3 text-white focus:outline-none focus:border-enigma-purple" value="anon@crypto.mail">
-                    
-                    <div class="grid grid-cols-2 gap-2">
-                        <button class="bg-[#1a1a24] border border-enigma-purple p-3 rounded text-center flex items-center justify-center gap-2 text-white">
-                            <i class="ph-fill ph-currency-btc text-enigma-warning"></i> Crypto
-                        </button>
-                        <button class="bg-[#1a1a24] border border-[#2a2a3f] p-3 rounded text-center text-enigma-text-light hover:border-white transition-colors">
-                            Card / PayPal
-                        </button>
-                    </div>
-                </div>
-                
-                <div class="border-t border-[#2a2a3f] pt-4 mb-6 flex justify-between items-center">
-                    <span class="text-white font-bold" id="checkout-total">Total: $0</span>
-                </div>
-                
-                <button id="confirm-purchase" class="btn-primary w-full py-3 rounded font-bold uppercase tracking-wider text-white shadow-neon-purple text-sm">
-                    Pay & Receive Key
-                </button>
-            </div>
-
-            <!-- Processing view -->
-            <div id="processing-view" class="hidden flex-col items-center justify-center py-10">
-                <div class="spinner mb-6"></div>
-                <p class="font-mono text-enigma-cyan text-sm animate-pulse">Awaiting blockchain confirmation...</p>
-                <p class="text-xs text-enigma-text-light mt-2">Connecting to auth servers</p>
-            </div>
-
-            <!-- Success view -->
-            <div id="success-view" class="hidden text-center py-6">
-                <i class="ph-circle-check-fill text-6xl text-enigma-cyan mb-4 drop-shadow-[0_0_10px_rgba(0,245,255,0.7)]"></i>
-                <h3 class="font-futuristic text-2xl font-bold text-white mb-2">Delivered!</h3>
-                <p class="text-sm text-enigma-text-light mb-6">Your license key has been generated.</p>
-                
-                <div class="bg-black/80 border border-enigma-cyan/50 p-4 rounded mb-6 relative group cursor-pointer">
-                    <span id="license-key" class="font-mono text-enigma-cyan font-bold break-all">ENIG-XXXX-XXXX-XXXX</span>
-                    <div class="absolute inset-0 bg-enigma-cyan/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity rounded">
-                        <span class="bg-black px-2 py-1 text-xs rounded text-white">Click to copy</span>
-                    </div>
-                </div>
-
-                <button onclick="document.getElementById('close-modal').click()" class="bg-[#1a1a24] text-white w-full py-2 rounded hover:bg-[#2a2a3f] transition-colors border border-[#2a2a3f]">Close Window</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Live Chat Fake Bubble -->
-    <div class="fixed bottom-6 right-6 z-40 group cursor-pointer">
-        <div class="absolute -top-10 right-0 bg-enigma-panel border border-enigma-purple/30 text-white text-xs px-3 py-1.5 rounded-lg shadow-neon-purple opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-            Need help? Chat now
-        </div>
-        <div class="bg-enigma-purple w-14 h-14 rounded-full flex items-center justify-center shadow-neon-purple hover:scale-110 transition-transform">
-            <i class="ph-fill ph-chat-teardrop-text text-2xl text-white"></i>
-        </div>
-    </div>
+    <!-- Sticky Discord Button -->
+    <a href="https://discord.gg/Kn6kKHBurn" target="_blank"
+        class="fixed bottom-6 right-6 z-40 bg-white/10 backdrop-blur-xl border border-white/10 p-3 rounded-full hover:bg-white/20 transition-all hover:scale-105 shadow-2xl group flex items-center gap-0 overflow-hidden"
+        title="Join Discord">
+        <i class="ph-fill ph-discord-logo text-2xl text-white group-hover:text-[#5865F2] transition-colors"></i>
+        <span
+            class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-300 ease-in-out text-sm font-medium text-white px-0 group-hover:px-3">Join
+            Community</span>
+    </a>
 
     <script src="script.js"></script>
 </body>
+
 </html>
